@@ -13,7 +13,10 @@
 
 #include <string>
 #include <vector>
+
 #include <boost/asio.hpp>
+#include <boost/lexical_cast.hpp>
+
 #include "header.hpp"
 
 namespace http {

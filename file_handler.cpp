@@ -9,13 +9,6 @@
 //
 
 #include "file_handler.hpp"
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <boost/lexical_cast.hpp>
-#include "mime_types.hpp"
-#include "reply.hpp"
-#include "request.hpp"
 
 namespace http {
 	namespace server4 {

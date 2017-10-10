@@ -11,12 +11,16 @@
 #ifndef HTTP_SERVER4_SERVER_HPP
 #define HTTP_SERVER4_SERVER_HPP
 
-#include <boost/asio.hpp>
 #include <string>
+
+#include <boost/asio.hpp>
 #include <boost/array.hpp>
 #include <boost/function.hpp>
 #include <boost/shared_ptr.hpp>
+
 #include "request_parser.hpp"
+#include "request.hpp"
+#include "reply.hpp"
 
 namespace http {
 	namespace server4 {

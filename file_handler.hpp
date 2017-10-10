@@ -12,6 +12,14 @@
 #define HTTP_SERVER4_FILE_HANDLER_HPP
 
 #include <string>
+#include <fstream>
+#include <sstream>
+
+#include <boost/lexical_cast.hpp>
+
+#include "mime_types.hpp"
+#include "reply.hpp"
+#include "request.hpp"
 
 namespace http {
 	namespace server4 {

@@ -9,17 +9,11 @@
 //
 
 #include "request_parser.hpp"
-#include <algorithm>
-#include <cctype>
-#include <boost/lexical_cast.hpp>
-#include "request.hpp"
+
+#include <boost/asio/yield.hpp>
 
 namespace http {
 	namespace server4 {
-
-// Enable the pseudo-keywords reenter, yield and fork.
-#include <boost/asio/yield.hpp>
-
 		std::string request_parser::content_length_name_ = "Content-Length";
 
 		boost::tribool request_parser::consume(request& req, char c)
@@ -175,9 +169,6 @@ namespace http {
 
 			return true;
 		}
-
-// Disable the pseudo-keywords reenter, yield and fork.
-#include <boost/asio/unyield.hpp>
 
 		bool request_parser::is_char(int c)
 		{

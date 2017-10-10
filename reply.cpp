@@ -9,8 +9,6 @@
 //
 
 #include "reply.hpp"
-#include <string>
-#include <boost/lexical_cast.hpp>
 
 namespace http {
 	namespace server4 {

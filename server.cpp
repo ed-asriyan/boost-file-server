@@ -9,8 +9,8 @@
 //
 
 #include "server.hpp"
-#include "request.hpp"
-#include "reply.hpp"
+
+#include <boost/asio/yield.hpp>
 
 namespace http {
 	namespace server4 {
@@ -24,9 +24,6 @@ namespace http {
 			tcp::resolver::query query(address, port);
 			acceptor_.reset(new tcp::acceptor(io_service, *resolver.resolve(query)));
 		}
-
-// Enable the pseudo-keywords reenter, yield and fork.
-#include <boost/asio/yield.hpp>
 
 		void server::operator()(boost::system::error_code ec, std::size_t length)
 		{
@@ -113,9 +110,6 @@ namespace http {
 			// references will disappear and the resources associated with the coroutine
 			// will be destroyed automatically after this function call returns.
 		}
-
-// Disable the pseudo-keywords reenter, yield and fork.
-#include <boost/asio/unyield.hpp>
 
 	} // namespace server4
 } // namespace http
